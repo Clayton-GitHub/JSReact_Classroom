@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Cards extends Component {
+class RandomCards extends Component {
 
     constructor(props) {
       super(props);
@@ -30,7 +30,7 @@ class Cards extends Component {
         return <div>Loading..........</div>
       }
       else {
-        return <div className='Cards'>
+        return <div>
           <ul>
             {items.cards.map(item => (
               <img key={item.id} src={item.imageUrl} alt=""></img>
@@ -41,4 +41,4 @@ class Cards extends Component {
     }
   }
   
-  export default Cards;
+  export default RandomCards;
