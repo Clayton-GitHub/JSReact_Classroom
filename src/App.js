@@ -11,40 +11,38 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className='container'>
           <h1 className='text-center bg-warning'>MTG Project</h1>
-          <div className='container-fluid'>
+          <div className='container'>
             <div className='row'>
-              <div className='col-sm-1 px-1'>
-                <div className='py-2 sticky-top flex-grow-1'>
-                  <div className='nav flex-sm-column bg-dark text-center'>
-                    <p></p>
-                    <Link style={linkstyle} to='/'>
-                      <span>Home</span>
-                    </Link>
-                    <Link style={linkstyle} to='/RandomCards'>
-                      <span>Random Cards</span>
-                    </Link>
-                    <Link style={linkstyle} to='/SingleCard'>
-                      <span>Single Card</span>
-                    </Link>
-                    <Link style={linkstyle} to='/Sets'>
-                      <span>Get Sets</span>
-                    </Link>
-                    <Link style={linkstyle} to='/Types'>
-                      <span>Show Types</span>
-                    </Link>
-                  </div>          
-                </div>
-              </div>
+                <Link class='btn btn-dark btn-lg mx-3 col-sm' to='/'>
+                    <span>Home</span>
+                </Link>
+                <Link class='btn btn-dark btn-lg mx-3 col-sm' to='/RandomCards'>
+                    <span>Random Cards</span>
+                </Link>
+                <Link class='btn btn-dark btn-lg mx-3 col-sm' to='/SingleCard'>
+                    <span>Single Card</span>
+                </Link>
+                <Link class='btn btn-dark btn-lg mx-3 col-sm' to='/Sets'>
+                    <span>Get Sets</span>
+                </Link>
+                <Link class='btn btn-dark btn-lg mx-3 col-sm' to='/Types'>
+                    <span>Show Types</span>
+                </Link>
+            </div>
+          </div>
+          <br></br>
+          <div className='container'>
+            <div className='row'>
               <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/RandomCards" component={RandomCards} />
                 <Route path="/SingleCard" component={SingleCard} />
                 <Route path="/Sets" component={Sets} />
-                <Route path="/Types" component={Types} />                
-              </Switch>              
-            </div>        
+                <Route path="/Types" component={Types} />
+              </Switch>
+            </div>
           </div>
         </div>
       </Router>
@@ -53,13 +51,9 @@ class App extends Component {
 }
 
 const Home = () => (
-  <div>
-    <h1>Welcome to the MTG Project</h1>
+    <div className='text-center m-5 text-light'>
+    <h1>Welcome to the MTG Project. Choose an option. Click a button.</h1>
   </div>
 )
-
-const linkstyle = {
-  color: 'white'
-}
 
 export default App;

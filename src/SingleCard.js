@@ -26,24 +26,25 @@ class SingleCard extends Component {
   render() {
     var { isloaded, items } = this.state;
     console.log(items)
-    
+
     if (!isloaded) {
-      return <div>Loading 1 MTG Card. Lets see if we get a picture..........</div>
+        return <div className='text-center m-5 text-light'>Loading 1 MTG Card. Lets see if we get a picture..........</div>
     }
     else {
       return <div>
         <ul>
           {items.cards.map(item => (
-            <div key={item.id}>
+              <div className='text-center m-5 text-light' key={item.id}>
               <span>{item.name}</span>
+              <br></br>
               <img src={item.imageUrl} alt=""></img>
-            </div>            
+            </div>
           ))}
         </ul>
       </div>;
     }
   }
-  
+
 }
 
 export default SingleCard;
