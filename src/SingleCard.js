@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
 class SingleCard extends Component {
+    // This call will pull back a single card via MTG API
 
+    // Basic constructor to be used by this class
   constructor(props) {
     super(props);
     this.state = {
@@ -11,6 +13,7 @@ class SingleCard extends Component {
     }
   }
 
+//   Defines the API to be called and store it in JSON
   componentDidMount() {
     fetch('https://api.magicthegathering.io/v1/cards?pageSize=1&random=true')
       .then(res => res.json())
@@ -25,8 +28,9 @@ class SingleCard extends Component {
 
   render() {
     var { isloaded, items } = this.state;
-    console.log(items)
 
+
+    // Will decide what data to show based on variable and will parse JSON once returned
     if (!isloaded) {
         return <div className='text-center m-5 text-light'>Loading 1 MTG Card. Lets see if we get a picture..........</div>
     }

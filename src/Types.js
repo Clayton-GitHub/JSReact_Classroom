@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 class Types extends Component {
+    // This class will show all the Types of MTG Cards available
 
     constructor(props) {
       super(props);
@@ -23,8 +24,8 @@ class Types extends Component {
     }
 
     render() {
+        // Simple render to show which types of MTG Cards are available.
       var { isloaded, items } = this.state;
-      console.log(items)
 
       if (!isloaded) {
           return <div className='text-center m-5 text-light'>How many types of MTG Cards are there? Lets find out..........</div>

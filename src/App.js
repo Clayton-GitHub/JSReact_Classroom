@@ -11,9 +11,12 @@ class App extends Component {
   render() {
     return (
       <Router>
+        {/* Here is the main router that is used to navigate through the webpage  */}
         <div className='container'>
+            {/* THis is the main container for the webpage */}
           <h1 className='text-center bg-warning'>MTG Project</h1>
           <div className='container'>
+              {/* This is the list of links that can be clicked on to navigate the webpage */}
             <div className='row'>
                 <Link class='btn btn-dark btn-lg mx-3 col-sm' to='/'>
                     <span>Home</span>
@@ -35,6 +38,7 @@ class App extends Component {
           <br></br>
           <div className='container'>
             <div className='row'>
+                {/* Here is a list of the switches to switch between the different components */}
               <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/RandomCards" component={RandomCards} />
@@ -50,6 +54,7 @@ class App extends Component {
   }
 }
 
+// This is what will be shown when at home page of webpage
 const Home = () => (
     <div className='text-center m-5 text-light'>
     <h1>Welcome to the MTG Project. Choose an option. Click a button.</h1>
