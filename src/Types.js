@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class RandomCards extends Component {
+class Types extends Component {
 
     constructor(props) {
       super(props);
@@ -11,7 +11,7 @@ class RandomCards extends Component {
     }
   
     componentDidMount() {
-      fetch('https://api.magicthegathering.io/v1/cards?pageSize=10&random=true')
+      fetch('https://api.magicthegathering.io/v1/types')
         .then(res => res.json())
         .then(json => {
   
@@ -27,17 +27,13 @@ class RandomCards extends Component {
       console.log(items)
   
       if (!isloaded) {
-        return <div>Loading up to 10 MTG Cards (with Pictures, I hope)..........</div>
+        return <div>How many types of MTG Cards are there? Lets find out..........</div>
       }
       else {
         return <div>
           <ul>
-            {items.cards.map(item => (
-              <div key={item.id}>
-                <span>{item.name}</span>
-                <img src={item.imageUrl} alt=""></img>
-              </div>
-              
+            {items.types.map(item => (
+                <p key={item.id}>{item}</p>
             ))}
           </ul>
         </div>;
@@ -45,4 +41,4 @@ class RandomCards extends Component {
     }
   }
   
-  export default RandomCards;
+  export default Types;

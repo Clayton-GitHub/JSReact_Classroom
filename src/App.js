@@ -3,6 +3,8 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import RandomCards from './RandomCards';
 import SingleCard from './SingleCard';
+import Sets from './Sets';
+import Types from './Types';
 
 class App extends Component {
 
@@ -26,6 +28,12 @@ class App extends Component {
                     <Link style={linkstyle} to='/SingleCard'>
                       <span>Single Card</span>
                     </Link>
+                    <Link style={linkstyle} to='/Sets'>
+                      <span>Get Sets</span>
+                    </Link>
+                    <Link style={linkstyle} to='/Types'>
+                      <span>Show Types</span>
+                    </Link>
                   </div>          
                 </div>
               </div>
@@ -33,6 +41,8 @@ class App extends Component {
                 <Route path="/" exact component={Home} />
                 <Route path="/RandomCards" component={RandomCards} />
                 <Route path="/SingleCard" component={SingleCard} />
+                <Route path="/Sets" component={Sets} />
+                <Route path="/Types" component={Types} />                
               </Switch>              
             </div>        
           </div>
